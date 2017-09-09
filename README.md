@@ -9,3 +9,12 @@ docker run -d \
     --name logio-server \
     tamasgal/logio-server
 ```
+
+## Using Docker Compose
+This will run a log.io server and a harvester simultaneously. 
+The `logs` folder will be mapped to `/logs` on the harvester container.
+Edit the `config/harvester.conf` to enable log file monitoring.
+
+```
+docker-compose up
+```
