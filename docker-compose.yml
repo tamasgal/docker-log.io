@@ -1,0 +1,15 @@
+version: '2'
+services:
+    logio-server:
+        build: .
+        ports:
+            - "28777:28777"
+            - "28778:28778"
+        volumes:
+            - ./config:/home/logio/.log.io
+    logio-harvester:
+        build: .
+        volumes:
+            - ./config:/home/logio/.log.io
+            - ./logs:/logs
+        command: log.io-harvester
